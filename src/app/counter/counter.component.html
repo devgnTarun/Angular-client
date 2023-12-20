@@ -5,10 +5,10 @@
     </div>
     <div class="counters">
         <div *ngFor="let counter of counters; let i = index" class="counter-item">
-            <input type="number" [(ngModel)]="counter.value" [value]="counter.value">
-            <button (click)="incrementCounter(i)">+</button>
-            <button (click)="decrementCounter(i)">-</button>
-            <button (click)="removeCounter(i)">Remove</button>
+            <input type="text" [(ngModel)]="counter.value" [value]="counter.value">
+            <button class="addButton" (click)="incrementCounter(i)">+</button>
+            <button class="decButton" (click)="decrementCounter(i)">-</button>
+            <button class="btnRemove" (click)="removeCounter(i)">Remove</button>
         </div>
     </div>
 </div>
