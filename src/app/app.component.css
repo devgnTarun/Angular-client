@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Syne:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Syne', sans-serif;
+}
+
+.navbar {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    margin-top: -10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: black;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar-nav a {
+    color: rgb(27, 27, 27);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.navbar-nav a:hover {
+    color: rgb(0, 0, 0);
+    /* Change color on hover */
+}
+
+.active {
+    font-weight: bold;
+    /* Style for active link */
+}

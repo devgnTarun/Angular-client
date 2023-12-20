@@ -1,0 +1,14 @@
+<div class="counter">
+    <div class="counter-buttons">
+        <button (click)="addCounter()">Add Counter</button>
+        <button (click)="resetCounters()">Reset</button>
+    </div>
+    <div class="counters">
+        <div *ngFor="let counter of counters; let i = index" class="counter-item">
+            <input type="number" [(ngModel)]="counter.value" [value]="counter.value">
+            <button (click)="incrementCounter(i)">+</button>
+            <button (click)="decrementCounter(i)">-</button>
+            <button (click)="removeCounter(i)">Remove</button>
+        </div>
+    </div>
+</div>
