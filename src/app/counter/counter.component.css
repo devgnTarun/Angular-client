@@ -23,9 +23,9 @@
     border: none;
     font-size: 14px;
     border-radius: 10px;
-    background-color: black;
+    background-color: rgb(27, 26, 26);
     color: white;
-    border: 0.5px solid black;
+    border: 0.5px solid rgb(27, 26, 26);
     margin: 10px;
     cursor: pointer;
 }

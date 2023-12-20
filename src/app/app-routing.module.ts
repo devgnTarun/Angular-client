@@ -5,7 +5,7 @@ import { CounterComponent } from './counter/counter.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/weather', pathMatch: 'full' }, // Default route
+  // { path: '', component :  },
   { path: 'weather', component: WeatherComponent },
   { path: 'counter', component: CounterComponent },
   // Other routes...

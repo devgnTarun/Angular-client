@@ -1,11 +1,25 @@
 <header class="navbar">
   <div class="logo">
-    <h1>Countify</h1>
+    <a routerLink="/" routerLinkActive="active">Countify</a>
   </div>
   <nav class="navbar-nav">
     <a routerLink="/vatavaran" routerLinkActive="active">Weather</a>
     <a routerLink="/counter" routerLinkActive="active">Counter</a>
   </nav>
 </header>
+<div class="container">
+  <header>
+    <h1>Welcome to Countify</h1>
+    <p>A simple counter and weather
+    </p>
+  </header>
+  <main>
+    <a routerLink="/weather" routerLinkActive="active" class="btn-primary">Weather</a>
+    <a routerLink="/counter" routerLinkActive="active" class="btn-secondary">Counter</a>
+  </main>
+  <footer>
+    <p>&copy; 2023 My App</p>
+  </footer>
+</div>
 
 <router-outlet></router-outlet>

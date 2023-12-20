@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 interface Counter {
   value: number;
 }
