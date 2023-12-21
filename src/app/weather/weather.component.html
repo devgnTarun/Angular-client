@@ -1,1 +1,46 @@
-<p>weather works!</p>
+<body>
+
+<div class="left-panel">
+  <h2>Weather App</h2>
+  <input type="text" [(ngModel)]="cityName" placeholder="Enter city name">
+  <button (click)="addCity()">Add</button>
+
+   <div *ngIf="recentLocations.length > 0">
+    <h3>Recent Locations:</h3>
+    <ul>
+      <li *ngFor="let location of recentLocations; let i = index" (click)="getForecast(location.name)">
+        {{ location.name }} - {{formatTemperature(location.temperature) }}°C, {{ location.weather }}
+        <img src="http://openweathermap.org/img/w/{{ location.icon }}.png" alt="Weather Icon">
+        <button (click)="refreshWeather(location)">Refresh</button>
+        <button (click)="removeLocation(i)">Remove</button>
+      </li>
+    </ul>
+    <button (click)="clearLocations()">Clear</button>
+  </div>
+</div>
+
+
+
+<div class="right-panel" *ngIf="selectedLocation">
+  <h3>{{ selectedLocation.city }} Forecast:</h3>
+  <!-- Display 5-day forecast data in the right panel -->
+  <ul>
+    <li *ngFor="let day of selectedLocation.forecast.list; let i = index">
+      <ng-container *ngIf="i % 8 === 0">
+        <div class="forecast-item">
+          <div class="date">{{ day.dt_txt | date: 'yyyy-MM-dd' }}</div>
+          <div class="temperature">{{ formatTemperature(day.main.temp) }}°C</div>
+          <div class="weather-description">{{ day.weather[0].description }}</div>
+        </div>
+      </ng-container>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+</body>
