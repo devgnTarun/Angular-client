@@ -24,7 +24,7 @@ interface ForecastData {
 export class WeatherComponent implements OnInit {
   cityName: string = '';
   recentLocations: any[] = [];
- selectedLocation: { city: string; forecast: ForecastData } | undefined;
+  selectedLocation: { city: string; forecast: ForecastData } | undefined;
 
 
   constructor(private weatherService: WeatherService) { }
@@ -48,7 +48,7 @@ export class WeatherComponent implements OnInit {
           weather: data.weather[0].description,
           icon: data.weather[0].icon
         };
-
+        console.log(data)
         // Keep only the latest 8 locations
         if (this.recentLocations.length >= 8) {
           this.recentLocations.pop(); // Remove the last location
@@ -69,6 +69,15 @@ export class WeatherComponent implements OnInit {
       }
     );
   }
+
+  getDayOfWeek(dateString: string): string {
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const date = new Date(dateString); // Convert the string to a Date object
+    const dayIndex = date.getDay(); // Get the day index (0-6)
+    const dayOfMonth = date.getDate(); // Get the day of the month (1-31)
+    return `${dayOfMonth} ${daysOfWeek[dayIndex]}`; // Return the corresponding day from the array
+  }
+
 
   refreshWeather(location: any): void {
     this.weatherService.getWeather(location.name).subscribe(
@@ -110,9 +119,9 @@ export class WeatherComponent implements OnInit {
     return data as ForecastData;
   }
   formatTemperature(temp: number): string {
-  // Convert temperature to Celsius and round to two decimal places
-  const celsius = temp - 273.15;
-  return celsius.toFixed(2);
-}
+    // Convert temperature to Celsius and round to two decimal places
+    const celsius = temp - 273.15;
+    return celsius.toFixed(2);
+  }
 
 }

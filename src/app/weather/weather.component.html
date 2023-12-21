@@ -47,18 +47,17 @@
         </svg>
       </button>
     </div>
-    <!-- Display 5-day forecast data in the right panel -->
     <div class="main_weather">
       <div class="icon">
 
       </div>
 
-      <div class="info">
-        <p>15C</p>
-        <p>cLAER SKY</p>
-        <p>WIND</p>
-        <p>PRESSURE</p>
-      </div>
+      <!-- <div class="info" *ngIf="day">
+        <p>{{ formatTemperature(day.main.temp) }}°C</p>
+        <p>{{ day.weather[0]?.description?.toUpperCase() || 'N/A' }}</p>
+        <p *ngIf="day.wind">Wind: {{ day.wind.speed }} m/s</p>
+        <p *ngIf="day.main">Pressure: {{ day.main.pressure }} hPa</p>
+      </div> -->
 
     </div>
 
@@ -67,9 +66,8 @@
         <li *ngFor="let day of selectedLocation.forecast.list; let i = index">
           <ng-container *ngIf="i % 8 === 0">
             <div class="forecast-item">
-              <div class="date">{{ day.dt_txt | date: 'yyyy-MM-dd' }}</div>
+              <div class="date">{{ getDayOfWeek(day.dt_txt) }}</div>
               <div class="temperature">{{ formatTemperature(day.main.temp) }}°C</div>
-              <div class="weather-description">{{ day.weather[0].description }}</div>
             </div>
           </ng-container>
         </li>

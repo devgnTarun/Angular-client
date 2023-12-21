@@ -191,3 +191,11 @@ ul {
   display: flex;
   gap: 10px;
 }
+
+.forecast-item {
+  text-align: center;
+}
+
+.forecast-item>div {
+  font-weight: 400;
+}
