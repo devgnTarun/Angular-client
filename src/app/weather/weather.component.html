@@ -67,6 +67,9 @@
           <ng-container *ngIf="i % 8 === 0">
             <div class="forecast-item">
               <div class="date">{{ getDayOfWeek(day.dt_txt) }}</div>
+              <div class="svg">
+                <!-- put svg -->
+              </div>
               <div class="temperature">{{ formatTemperature(day.main.temp) }}°C</div>
             </div>
           </ng-container>

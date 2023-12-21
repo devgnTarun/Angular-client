@@ -6,7 +6,7 @@
 }
 
 .left-panel {
-  flex-basis: 40%;
+  flex-basis: 45%;
   margin: 0px auto;
   padding: 20px;
   background-color: #fff;
@@ -198,4 +198,9 @@ ul {
 
 .forecast-item>div {
   font-weight: 400;
+}
+
+.svg {
+  width: 30px;
+  height: 30px;
 }
